@@ -1,1 +1,6 @@
 <h1>List of photos</h1>
+<% @list_of_photos.each do |picture| %>
+<img src=<%= picture.source %>>
+<p><a href="/photos/<%= picture.id %>">Show Details</a></p>
+<p><a href="/photos/<%= picture.id %>/edit">Edit</a></p>
+<% end %>
