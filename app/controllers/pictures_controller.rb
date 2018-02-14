@@ -19,9 +19,10 @@ class PicturesController < ApplicationController
     p.source = new_source
     p.caption = new_caption
     p.save
+    redirect_to("/photos")
 #    redirect_to("/photos/" + p.id.to_s)
-    @Photo_count = Photo.count
-    render("/pictures_templates/create_row_view.html.erb")
+#    @Photo_count = Photo.count
+#    render("/pictures_templates/create_row_view.html.erb")
   end
   def edit_form
     edit_id = params.fetch("id")
@@ -36,7 +37,9 @@ class PicturesController < ApplicationController
     p.source = update_source
     p.caption = update_caption
     p.save
-    render("/pictures_templates/update_row_view.html.erb")
+#    redirect_to("/")
+    redirect_to("/photos/" + p.id.to_s)
+#    render("/pictures_templates/update_row_view.html.erb")
   end
   def destroy_row
     delete_id = params.fetch("id")
